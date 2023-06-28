@@ -1,0 +1,8 @@
+{
+  "canisters": {
+    "studentWall_backend": {
+      "main": "src/studentWall_backend/main.mo",
+      "type": "motoko"
+    }
+  }
+}

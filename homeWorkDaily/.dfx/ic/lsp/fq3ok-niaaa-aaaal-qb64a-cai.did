@@ -1,0 +1,30 @@
+type Result_1 = 
+ variant {
+   err;
+   ok: Homework__1;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok;
+ };
+type Homework__1 = 
+ record {
+   completed: bool;
+   description: text;
+   dueDate: int;
+   title: text;
+ };
+type Homework = 
+ service {
+   addHomework: (Homework__1) -> (nat);
+   deleteHomework: (nat) -> (Result);
+   getAllHomework: () -> (vec Homework__1);
+   getHomework: (nat) -> (Result_1);
+   getPendingHomework: () -> (vec Homework__1);
+   markAsCompleted: (nat) -> (Result);
+   searchHomework: (text) -> (vec Homework__1) query;
+   updateHomework: (nat, Homework__1) -> (Result);
+   verifyWork: (principal, principal) -> (Result);
+ };
+service : () -> Homework
